@@ -16,6 +16,18 @@ exports.arraysAnswers = {
   },
 
   removeWithoutCopy: function(arr, item) {
+    var lgth;
+    var idx;
+
+    for (idx = 0, lgth=arr.length; idx < lgth; idx++) {
+      if (arr[idx] === item) {
+        arr.splice(idx, 1);
+        idx--;
+        lgth--;
+      }
+    }
+
+    return arr;
   },
 
   append: function(arr, item) {
