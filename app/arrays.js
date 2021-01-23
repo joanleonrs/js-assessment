@@ -12,12 +12,10 @@ exports.arraysAnswers = {
   },
 
   remove: function(arr, item) {
-    return arr.filter(value => value === item);
+    return arr.filter(value => value !== item);
   },
 
   removeWithoutCopy: function(arr, item) {
-    arr.filter(value => value === item);
-    return arr;
   },
 
   append: function(arr, item) {
@@ -51,6 +49,9 @@ exports.arraysAnswers = {
 
   count: function(arr, item) {
 
+    return arr.reduce(
+      (a, val) => (val === item ? a + 1 : a), 0
+    );
   },
 
   duplicates: function(arr) {
