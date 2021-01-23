@@ -55,9 +55,14 @@ exports.arraysAnswers = {
 
   duplicates: function(arr) {
 
+    return arr.reduce(function(acc, el, i, arr) {
+      if (arr.indexOf(el) !== i && acc.indexOf(el) < 0) acc.push(el); 
+      return acc;
+    }, []);
   },
 
   square: function(arr) {
+
     return arr.map(function (x) {
       return Math.pow(x, 2);
     });
@@ -65,5 +70,6 @@ exports.arraysAnswers = {
 
   findAllOccurrences: function(arr, target) {
 
+    return arr.map((e, i) => e === target ? i : '').filter(String);
   }
 };
