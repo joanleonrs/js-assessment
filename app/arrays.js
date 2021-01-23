@@ -45,7 +45,8 @@ exports.arraysAnswers = {
   },
 
   insert: function(arr, item, index) {
-    return arr.splice(item, index);
+    arr.splice(index, 0, item);
+    return arr;
   },
 
   count: function(arr, item) {
@@ -57,7 +58,9 @@ exports.arraysAnswers = {
   },
 
   square: function(arr) {
-
+    return arr.map(function (x) {
+      return Math.pow(x, 2);
+    });
   },
 
   findAllOccurrences: function(arr, target) {
